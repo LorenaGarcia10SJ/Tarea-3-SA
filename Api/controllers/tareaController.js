@@ -50,7 +50,6 @@ exports.crearCi = async (req, res) => {
   }
 };
 
-
 // Actualizar un CI
 exports.actualizarById = async (req, res) => {
   try {
