@@ -1,6 +1,6 @@
 # Tarea 3 Creación de API para CMDB
 
-**Nombre:** Ingrid Lorena García Yantuche  
+**Nombre:** Ingrid Lorena Garcia Yantuche  
 **Carnet:** 201700399  
 
 ## Contenido
