@@ -107,7 +107,7 @@ Esta sección describe los endpoints disponibles para gestionar los Elementos de
 - **Body - raw:**
 ```json
 {
-  "nombre": "Servidor de QA",
+  "nombre": "Servidor QA",
   "tipo_ci": "Hardware",
   "descripcion": "Servidor para pruebas QA",
   "numero_serie": "QA123456",
@@ -127,15 +127,29 @@ Esta sección describe los endpoints disponibles para gestionar los Elementos de
   "estado_configuracion": "Aprobado",
   "numero_licencia": "QA999",
   "fecha_vencimiento": "2025-01-01",
-  "ambiente": "QA"
+  "ambiente": "QA",
+
+  "relacion_explicita": "dependencia",
+  "relacion_con_id": 12
 }
 ```
+Tipos de relaciones en la CMDB
+1. relacionado_con (Relación simple)
+    Permite referenciar directamente otro CI por su id. Es útil para relaciones básicas o directas (por ejemplo, "esta aplicación usa esta base de datos").
+
+2. relacion_explicita + relacion_con_id (Relación compleja)
+
+    - relacion_explicita: tipo de relación 
+    - relacion_con_id: ID del CI destino
+
+    Se usan para insertar una fila en la tabla relaciones_ci, permitiendo relaciones más detalladas y múltiples. Puede establecer que un CI depende de varios otros, o tiene diferentes tipos de relación (por ejemplo, dependencia, herencia, etc.).
 
 - **Respuesta exitosa:**
 
 ```json
 {
-    "message": "CI registrado correctamente"
+    "message": "CI registrado correctamente",
+    "id": 13
 }
 ```
 
